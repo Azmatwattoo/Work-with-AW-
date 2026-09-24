@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Work with AW | Online Work Opportunities</title>
+  <meta name="description"
+        content="Work with AW - Explore online work opportunities and learn how to get started.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0b0f19;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* NAVBAR */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(11, 15, 25, 0.95);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-container {
+      max-width: 1150px;
+      margin: auto;
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+    }
+
+    .logo span {
+      color: #00e5a8;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #d9dee8;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #00e5a8;
+    }
+
+    .menu-btn {
+      display: none;
+      font-size: 26px;
+      cursor: pointer;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      padding: 80px 20px;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(0,229,168,0.15), transparent 30%),
+        radial-gradient(circle at 80% 80%, rgba(0,140,255,0.14), transparent 30%);
+    }
+
+    .hero-content {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 16px;
+      border: 1px solid rgba(0,229,168,0.4);
+      border-radius: 30px;
+      color: #00e5a8;
+      background: rgba(0,229,168,0.07);
+      font-size: 13px;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 7vw, 75px);
+      line-height: 1.05;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      color: #00e5a8;
+    }
+
+    .hero p {
+      max-width: 680px;
+      margin: auto;
+      color: #aeb7c7;
+      font-size: 18px;
+    }
+
+    .buttons {
+      margin-top: 35px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 14px 25px;
+      border-radius: 10px;
+      font-weight: bold;
+      display: inline-block;
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      background: #00e5a8;
+      color: #06110d;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(0,229,168,0.2);
+    }
+
+    .btn-secondary {
+      border: 1px solid #343b4b;
+      color: white;
+    }
+
+    .btn-secondary:hover {
+      border-color: #00e5a8;
+      color: #00e5a8;
+    }
+
+    /* GENERAL */
+    section {
+      padding: 85px 20px;
+    }
+
+    .container {
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-size: 38px;
+      margin-bottom: 12px;
+    }
+
+    .section-title p {
+      color: #9fa8b8;
+      max-width: 650px;
+      margin: auto;
+    }
+
+    /* CARDS */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: #111725;
+      border: 1px solid #202838;
+      padding: 30px;
+      border-radius: 18px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(0,229,168,0.5);
+    }
+
+    .icon {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      background: rgba(0,229,168,0.1);
+      color: #00e5a8;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    .card p {
+      color: #9fa8b8;
+      font-size: 15px;
+    }
+
+    /* STEPS */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .step {
+      text-align: center;
+      padding: 25px 15px;
+      background: #111725;
+      border-radius: 16px;
+      border: 1px solid #202838;
+    }
+
+    .number {
+      width: 45px;
+      height: 45px;
+      margin: 0 auto 15px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #00e5a8;
+      color: #06110d;
+      font-weight: bold;
+    }
+
+    .step p {
+      color: #9fa8b8;
+      font-size: 14px;
+    }
+
+    /* FAQ */
+    .faq {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    details {
+      background: #111725;
+      border: 1px solid #202838;
+      border-radius: 12px;
+      margin-bottom: 12px;
+      padding: 18px 20px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    details p {
+      color: #9fa8b8;
+      padding-top: 12px;
+      font-size: 14px;
+    }
+
+    /* CTA */
+    .cta {
+      text-align: center;
+      background: linear-gradient(
+        135deg,
+        rgba(0,229,168,0.12),
+        rgba(0,140,255,0.08)
+      );
+      border-top: 1px solid #202838;
+      border-bottom: 1px solid #202838;
+    }
+
+    .cta h2 {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+
+    .cta p {
+      color: #aeb7c7;
+      max-width: 650px;
+      margin: 0 auto 30px;
+    }
+
+    /* CONTACT */
+    .contact-box {
+      max-width: 700px;
+      margin: auto;
+      background: #111725;
+      padding: 35px;
+      border-radius: 18px;
+      border: 1px solid #202838;
+      text-align: center;
+    }
+
+    .phone {
+      font-size: 24px;
+      color: #00e5a8;
+      font-weight: bold;
+      margin: 15px 0 25px;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 30px 20px;
+      text-align: center;
+      background: #070a11;
+      color: #788295;
+      font-size: 13px;
+    }
+
+    /* WHATSAPP FLOATING BUTTON */
+    .whatsapp {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #25D366;
+      color: white;
+      font-size: 28px;
+      z-index: 999;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+    }
+
+    .whatsapp:hover {
+      transform: scale(1.08);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 850px) {
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .steps {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        background: #0b0f19;
+        flex-direction: column;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .hero {
+        min-height: 80vh;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .section-title h2 {
+        font-size: 30px;
+      }
+
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .cta h2 {
+        font-size: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-container">
+
+      <a href="#home" class="logo">
+        Work <span>with AW</span>
+      </a>
+
+      <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#how">How It Works</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+
+      <div class="badge">
+        ✦ Online Work Opportunities
+      </div>
+
+      <h1>
+        Start Your Journey With
+        <span>Work with AW</span>
+      </h1>
+
+      <p>
+        Explore online work opportunities and learn how to get started
+        from the comfort of your home.
+      </p>
+
+      <div class="buttons">
+        <a href="#work" class="btn btn-primary">
+          Explore Work
+        </a>
+
+        <a
+          href="https://wa.me/923208722726?text=Assalam-o-Alaikum%2C%20mujhe%20Work%20with%20AW%20ke%20online%20work%20ke%20bare%20mein%20details%20chahiye."
+          target="_blank"
+          class="btn btn-secondary">
+          Contact on WhatsApp
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- WORK -->
+  <section id="work">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Online Work</h2>
+        <p>
+          Different types of online work may be available depending
+          on current opportunities and requirements.
+        </p>
+      </div>
+
+      <div class="cards">
+
+        <div class="card">
+          <div class="icon">💻</div>
+          <h3>Online Tasks</h3>
+          <p>
+            Learn about available online tasks and their requirements
+            before getting started.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">📱</div>
+          <h3>Flexible Work</h3>
+          <p>
+            Explore work opportunities that can potentially be managed
+            using a smartphone and internet connection.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🚀</div>
+          <h3>Get Started</h3>
+          <p>
+            Contact us to receive the latest information about available
+            opportunities and the joining process.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- HOW IT WORKS -->
+  <section id="how">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>How It Works</h2>
+        <p>
+          A simple process to learn about an opportunity before deciding
+          whether to participate.
+        </p>
+      </div>
+
+      <div class="steps">
+
+        <div class="step">
+          <div class="number">1</div>
+          <h3>Contact</h3>
+          <p>
+            Send us a message through WhatsApp.
+          </p>
+        </div>
+
+        <div class="step">
+          <div class="number">2</div>
+          <h3>Details</h3>
+          <p>
+            Receive information about the current work opportunity.
+          </p>
+        </div>
+
+        <div class="step">
+          <div class="number">3</div>
+          <h3>Understand</h3>
+          <p>
+            Review the requirements, terms and process carefully.
+          </p>
+        </div>
+
+        <div class="step">
+          <div class="number">4</div>
+          <h3>Decide</h3>
+          <p>
+            Participate only if the opportunity suits you.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container">
+
+      <h2>Interested in Online Work?</h2>
+
+      <p>
+        Contact Work with AW to ask questions and receive the latest
+        available information.
+      </p>
+
+      <a
+        href="https://wa.me/923208722726?text=Assalam-o-Alaikum%2C%20mujhe%20online%20work%20ki%20details%20chahiye."
+        target="_blank"
+        class="btn btn-primary">
+        💬 Message on WhatsApp
+      </a>
+
+    </div>
+  </section>
+
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Frequently Asked Questions</h2>
+        <p>
+          Some common questions about online work.
+        </p>
+      </div>
+
+      <div class="faq">
+
+        <details>
+          <summary>Online work kya hai?</summary>
+          <p>
+            Online work se murad internet ke zariye different tasks
+            ya services perform karna hai. Available work opportunity
+            ke mutabiq requirements different ho sakti hain.
+          </p>
+        </details>
+
+        <details>
+          <summary>Kya earning guaranteed hai?</summary>
+          <p>
+            Nahi. Earning kisi bhi online opportunity mein guaranteed
+            nahi samajhni chahiye. Results work, task availability,
+            requirements aur applicable terms par depend kar sakte hain.
+          </p>
+        </details>
+
+        <details>
+          <summary>Details kaise milengi?</summary>
+          <p>
+            Neeche diye gaye WhatsApp button se contact karke current
+            opportunity ki details aur requirements pooch sakte hain.
+          </p>
+        </details>
+
+        <details>
+          <summary>Start karne se pehle kya karna chahiye?</summary>
+          <p>
+            Kisi bhi work opportunity mein participate karne se pehle
+            terms, requirements, fees (agar koi hon), risks aur process
+            ko achi tarah samajhna chahiye.
+          </p>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Contact Us</h2>
+        <p>
+          Have a question? Get in touch with Work with AW.
+        </p>
+      </div>
+
+      <div class="contact-box">
+
+        <h3>Work with AW</h3>
+
+        <p>
+          For online work information and current opportunities:
+        </p>
+
+        <div class="phone">
+          0320 8722726
+        </div>
+
+        <a
+          href="https://wa.me/923208722726?text=Assalam-o-Alaikum%2C%20mujhe%20Work%20with%20AW%20ki%20details%20chahiye."
+          target="_blank"
+          class="btn btn-primary">
+          💬 WhatsApp Us
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <p>
+      © 2026 Work with AW. All rights reserved.
+    </p>
+
+    <p style="margin-top:8px;">
+      Please review all terms and information carefully before
+      participating in any online work opportunity.
+    </p>
+  </footer>
+
+
+  <!-- FLOATING WHATSAPP -->
+  <a
+    class="whatsapp"
+    href="https://wa.me/923208722726?text=Assalam-o-Alaikum%2C%20mujhe%20online%20work%20ki%20details%20chahiye."
+    target="_blank"
+    aria-label="Contact on WhatsApp">
+    ☎
+  </a>
+
+
+  <!-- JAVASCRIPT -->
+  <script>
+
+    function toggleMenu() {
+      const nav = document.getElementById("navLinks");
+      nav.classList.toggle("active");
+    }
+
+    // Close mobile menu after clicking a link
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        document.getElementById("navLinks").classList.remove("active");
+      });
+    });
+
+  </script>
+
+</body>
+  </html>
